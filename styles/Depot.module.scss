@@ -1,0 +1,103 @@
+@use "./variables.scss" as *;
+@use "./mixins/centeredBackground.scss" as *;
+@use "./mixins/paddingYX" as *;
+@use "./mixins/flexHandler" as *;
+@use "./mixins/marginYX" as *;
+#depot{
+    @include centered-background($bg_init);
+    @include paddingY(20px);
+    #depot_container{
+        margin: 20px auto 0 auto;
+        width:90%;
+        background: rgba(255, 255, 255, 0.4);
+        box-shadow: inset 3px 3px 10px rgba(28, 97, 118, 0.3);
+        @include paddingXY(20px,20px);
+        border-radius: 12px;
+        .search{
+             .search_bar{
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+             border-radius: 10px;
+            .search_input{
+                @include paddingX(10px);
+                height: 50px;
+                border-radius: 10px  0 0 10px;
+                display: flex;
+                align-items: center;
+                background: linear-gradient(90deg, #4C90A5 19.37%, #98C2CD 100%);
+               
+            }
+            input{
+                background: inherit;
+                border: none;
+                &::placeholder{
+                    color: #fff;
+                }
+            }
+            svg{
+                font-size: 2.0rem;
+            }
+            .params{
+                @include paddingX(5px);
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                height: 50px;
+                border-radius: 0 10px 10px 0;
+                background-color: #99D5D6;
+               
+                svg{
+                    transform: rotate(-90deg);
+                    transition: all 0.5s ease;
+                }
+                &.open{
+                    svg{
+                        transform: rotate(0);
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+                }
+                .inner_params{
+                    @include marginY(10px)
+                }
+        }
+         #container_products{
+           @include flex-handler(column,space-evenly);
+           .products{
+            @include marginY(10px);
+           }
+         }  
+    }
+    @media (max-width:#{$bp_tablet}) {
+        
+    }
+    @media (min-width:#{$bp_tablet}) and (max-width:#{$bp_desktop}) {
+        
+    }
+    @media (min-width:#{$bp_desktop}) {
+        #depot_container{
+            min-height: 100vh;
+            .search{
+                .search_bar{
+               .search_input{
+                 width: 100%;
+               }
+            }
+        }
+             #container_products{
+            @include flex-handler(row,space-around);
+            flex-wrap: wrap;
+            
+            .products{
+                @include flex-handler(column,space-between);
+                 width: 270px;
+            }
+          } 
+        }
+       
+    }
+}

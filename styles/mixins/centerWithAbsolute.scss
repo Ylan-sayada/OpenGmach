@@ -1,0 +1,12 @@
+@mixin centered-with-absolute(){
+  position: absolute;
+  left: 40%;
+  margin-left: -80px;
+  top: 50%;
+  margin-top: -50px;
+}
+@mixin centered-with-absolute-y(){
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+}

@@ -1,0 +1,47 @@
+@use "../variables.scss" as *;
+@use "../mixins/marginYX.scss" as *;
+@use "../mixins/paddingYX.scss" as *;
+#footer{
+    background: linear-gradient(180deg, #1C6176 0%, rgba(28, 97, 118, 0.65) 100%); 
+    @include paddingXY(20px,10px);
+    color:$light_font_color;
+    .left_side{
+        @include marginY(20px);
+        display: flex;
+        width:100%;
+        justify-content: space-evenly;
+        .logoImg{
+            width:60px!important;
+            height: 60px!important;
+        }
+         >*{
+            width:50%;
+        }
+    }
+   
+    @media (max-width:#{$bp_tablet}) {
+        
+    }
+    @media (min-width:#{$bp_tablet}) and (max-width:#{$bp_desktop}) {
+        
+    }
+    @media (min-width:#{$bp_desktop}) {
+       display: flex;
+       .left_side{
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        .logoImg{
+            background-size: cover;
+            width:146px!important;
+            height: 146px!important;
+        }
+       }
+       .right_side{
+        width:50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       }
+    }
+}

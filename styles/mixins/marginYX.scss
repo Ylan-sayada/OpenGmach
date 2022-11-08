@@ -1,0 +1,11 @@
+@mixin marginXY($x:0,$y:0){
+    margin: $x $y;
+}
+@mixin marginX($x:0) {
+    margin-left:$x;
+    margin-right: $x;
+}
+@mixin marginY($y:0) {
+    margin-top:$y;
+    margin-bottom: $y;
+}

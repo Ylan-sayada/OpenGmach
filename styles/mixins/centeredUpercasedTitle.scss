@@ -1,0 +1,7 @@
+@use "../variables.scss" as *;
+@mixin centered-upercased-title($transform:uppercase,$color:$primary_font_init_color){
+    font-weight: 700;
+    text-transform: $transform;
+    text-align: center;
+    color:$color;
+}

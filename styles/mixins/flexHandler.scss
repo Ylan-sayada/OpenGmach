@@ -1,0 +1,5 @@
+@mixin flex-handler($direction : row,$justifyContent :flex-start){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+}

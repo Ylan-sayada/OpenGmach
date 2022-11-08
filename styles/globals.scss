@@ -1,0 +1,64 @@
+@use "./variables.scss" as *;
+@import "~bootstrap/scss/bootstrap";
+*{
+    font-family: 'Roboto', '-apple-system', "Segoe UI",system-ui , "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+.pac-container{
+    z-index: 800000;
+}
+button{
+    &.rounded{
+         border-radius: 20%;
+    }
+   
+    &.regular{
+        background-color:$btn_bg_primary_color;
+        color: $primary_btn_font_color;
+    }
+     &.dark {
+   background-color:$btn_bg_dark_color;
+   color: $dark_btn_font_color;
+}
+    &.light{
+        background-color:$btn_bg_light_color;
+   color: $light_btn_font_color;
+    }
+}
+a{
+    color:inherit;
+    text-decoration: none;
+}
+.nav-item{ 
+    .nav-link{
+        color: #fff;
+        &.active{
+    background-color: #4C90A5;
+}}
+}
+.none{
+    display: none;
+}
+@media (max-width:#{$bp_tablet}) {
+    h1{
+        font-size: $init_h1_font_size_mobile;
+    }
+    h2{
+        font-size: $h2_font_size_mobile;
+    }
+    h3{
+        font-size: $init_h3_font_size_mobile;
+    }
+    
+        }
+@media (min-width:#{$bp_tablet}) and (max-width:#{$bp_desktop}) {
+            
+}
+@media (min-width:#{$bp_desktop}) {
+            p{
+                 font-size: 25px;
+            }
+        }

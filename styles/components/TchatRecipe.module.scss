@@ -1,0 +1,94 @@
+@use "../variables.scss" as *;
+@use "../mixins/flexHandler.scss" as *;
+#tchat_container{
+    
+    position: fixed;
+    bottom: 0;
+    left: 5%;
+   
+    z-index: 1000;
+    max-height:40vh;
+    border: 1px solid black;
+    .container{
+        overflow: scroll;
+    }
+    @include flex-handler();
+            .title_container{
+                text-align: center;
+                padding: 10px;
+            }
+    .discuss_container{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        background-color: #ECF9F8;
+        .title_container{
+            background-color: #7DC0C9;
+            
+        } .msg_list{
+            margin: 20px;
+            height: 100%;
+            overflow-y: scroll;
+            .tchat_message{
+                position: relative;
+                padding: 10px 0;
+                img{
+                    width: 40%;
+                }
+                .message_title_owner{
+                display: flex;
+                flex-direction: column; 
+                align-items: center;   
+                }
+                &.other_msg{
+                    flex-direction: row-reverse;
+                    .message_date{
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                    }
+                }
+                &.own_msg{
+                    .message_date{
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+                display: flex;
+                align-items: center;
+                .message_date{
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+        input{
+            width:100%
+        }
+       
+    
+    }
+    @media (max-width:#{$bp_tablet}) {
+        .user_list{
+            width:30%;
+            .container{
+                @include flex-handler(column);
+                align-items: center;
+            .img_owner{
+                width:50%;
+            }
+            }
+            
+        }
+        
+            }
+            @media (min-width:#{$bp_tablet}) and (max-width:#{$bp_desktop}) {
+                
+            }
+            @media (min-width:#{$bp_desktop}) {
+                
+            }
+}

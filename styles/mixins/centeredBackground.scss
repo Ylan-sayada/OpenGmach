@@ -1,0 +1,7 @@
+@use "../variables.scss" as var;
+@mixin centered-background($url){
+    background-image:    url('../../public/#{$url}');
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;
+}

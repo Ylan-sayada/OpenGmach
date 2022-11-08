@@ -1,0 +1,74 @@
+@use "./variables.scss" as *;
+@use "./mixins/centeredBackground.scss" as *;
+@use "./mixins/centeredUpercasedTitle.scss" as *;
+@use "./mixins/marginYX.scss" as *;
+@use "./mixins/paddingYX.scss" as *;
+#init{
+    min-height: 100vh;
+    @include paddingXY(10px,10px);
+    @include centered-background($bg_init);
+    color: $primary_font_init_color;
+        h1{
+            @include centered-upercased-title;
+        }
+        h3{
+            @include centered-upercased-title(capitalize);
+        }
+    #stepper{
+        @include marginXY(20px,5px);
+        #stepper__nav{
+            color:rgb(219, 219, 219) ;
+            & > *{
+                width:20%;
+            }
+            display: flex;
+            .stepper__div{
+                position: relative;
+                display: flex;
+                align-items: center;
+                .bar{
+                    display: block;
+                    width: 100%;
+                    border:1px solid rgb(219, 219, 219);
+                }
+                &.selected{
+                    .bar{
+                        border-color:$primary_font_init_color ;
+                    }
+                }
+            }
+           .stepper__stage{
+            position: relative;
+            text-align: center;
+            word-wrap: break-word;
+            display: flex;
+            align-items:center;
+            flex-direction: column;
+                .stepper__no_stage{
+                    background-color: rgb(219, 219, 219);
+                    color: $primary_btn_font_color;
+                    position: relative;
+                    z-index: 1;
+                    border-radius: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width:37px;
+                    height: 37px;
+                    border: 1px solid rgb(219, 219, 219);
+                }
+                &.selected{
+                        color:$primary_font_init_color;
+                        .stepper__no_stage{
+                            background: linear-gradient(322.18deg, #4C90A5 16.32%, #C5EEE6 88.45%);
+                        }
+                    }
+           }
+           
+        }
+        #stepper__content{
+            width:60%;
+            margin:0 auto;
+           }
+    }
+}
